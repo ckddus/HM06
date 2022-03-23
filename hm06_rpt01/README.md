@@ -5,3 +5,6 @@
 - hm06_sitelist.html : 홈피 링크 네비게이터, 링크로 구성
   - hm06_Info.html : 나의 소개
   - hm06_day.html : 나의 하루 소개
+
+## 사용한 html 기술
+- 
