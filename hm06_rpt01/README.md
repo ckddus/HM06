@@ -7,6 +7,13 @@
   - hm06_day.html : 나의 수요일 하루 소개
   - Best_movies.html : 좋아하는 영화 3가지
   - Best_songs.html : 좋아하는 노래 3가지
+  - intro.html : 기본 화면
 
 ## 사용한 html 기술
-- 
+- iframe
+- list
+- br
+- ul
+- table
+- a
+- target
