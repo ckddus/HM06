@@ -9,6 +9,7 @@
 - Best_songs.html : 좋아하는 노래 3가지
 - hm06_card : 크리스마스 카드
 - form : 영화 동호회
+  -form_movie : 동호회 가입 축하
 
 ## 사용한 html 기술
 - iframe
@@ -18,3 +19,15 @@
 - table
 - a
 - target
+- box-shadow
+- text-shadow
+- textColorAnimation
+- rotate_image
+- border-radius
+- input
+- hover
+- datalist
+- align
+- legend
+- form
+- fieldset
