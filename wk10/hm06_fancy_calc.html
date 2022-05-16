@@ -4,35 +4,54 @@
   <head>
     <!-- 문서제목, 자바스크립트 코드, CSS 스타일 정의, 메타데이터정의 -->
     <meta charset="utf-8" />
-    <title>hmnn : Javascript</title>
+    <title>hm06 : Javascript</title>
     <style>
-        input {
-            padding: 8px;
-            display: inline;
-            margin-top: 4px;
-            font-size: 20px;
-            background-color: #ffffff;
-        }
-        input#display {
-            color: black;
-            background-color: #99ffcc;
-            font-size: 20px;
-            text-align: right;
-        }
-        input.num {
-            background-color: #ffff66;
-            font-weight: bold;
-        }
-        input.op {
-            background-color: #ff9900;
-            font-weight: bold;
-        }
-        input#clear {
-            background-color: #00ffff;
-        }
-        input#enter {
-            background-color: #00ffff;
-        }
+      div.calculator {
+        background-color:#515755;
+        height:450px;
+        width:530px;
+        border-radius:15px;
+        position: absolute;
+        top:120px;
+        left:35%; 	
+      }
+    * {
+        box-sizing: border-box;
+        font-family: 'Rubik', sans-serif;
+      }
+
+      body {
+        background-color: rgb(255, 255, 255);
+      }
+
+      button:focus {
+        outline: none;
+      }
+      input {
+        padding: 8px;
+        display: inline;
+        margin-top: 4px;
+        font-size: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+      }
+      input#display {
+        color: black;
+        background-color: #bccd95;
+        font-size: 20px;
+        text-align: right;
+      }
+      input#num {
+        background-color: rgb(158, 157, 157);
+        font-weight: bold;
+        font-size: 20px;
+      }
+      input#op {
+        background-color: rgb(68, 68, 66);
+        font-weight: bold;
+        font-size: 20px;
+      }
+     
     </style>
     <script>
       var expression = "";
@@ -66,42 +85,99 @@
       function isInteger(x) {
         return Math.floor(x) === x;
       }
+      function sin(){
+              expression = expression;
+			  document.calculator.result.value=Math.sin(document.calculator.result.value);
+		  }
+		function cos(){
+			  document.calculator.result.value=Math.cos(document.calculator.result.value);
+		  }
+		function tan(){
+			  document.calculator.result.value=Math.tan(document.calculator.result.value);
+		  }
+    function sqrt2(){
+			  document.calculator.result.value = Math.pow(document.calculator.result.value,1/2);
+		  }
+      function pow(all){
+       all.value = Math.pow(all.value,2);
+      }
+      function Pi() {
+        var expression_num = parseInt(eval(expression));
+          expression = expression_num*3.14;
+        document.getElementById("display").value = expression;
+      }
+      function e() {
+        var expression_num = parseInt(eval(expression));
+          expression = expression_num*2.71;
+        document.getElementById("display").value = expression;
+      }
+      function swap() {
+        var expression_num = parseInt(eval(expression));
+          expression = expression_num*-1;
+        document.getElementById("display").value = expression;
+      }
+      function hex() {
+        var expression_num = parseInt(eval(expression));
+          expression = expression_num.toString(16);
+        document.getElementById("display").value = expression;
+      }
+
     </script>
   </head>
 
   <body>
-    <!-- 문서의 본문 텍스트, 이미지, 테이블, 자바스크립트 코드, 동영상 등 -->
-    <div align="center">
+    <style>
+      input {
+      padding: 8px;
+      display: inline;
+      margin-top: 4px;
+      font-size: 20px;
+      }
+      </style>
+    
+    <div align="center" class="calculator">
+      
       <h3>JS calculator</h3>
       <hr />
-      <form>
-        <input id="display" value="0" size="21" />
-        <input type="button" value="    &larr;    " onclick="del()" />
+      <form name="calculator">
+        <input id="display" value="0" size="45" name="result" placeholder="0"/>
         <br />
-        <input class ="num" type="button" value="    (    " onclick="add('(')" />
-        <input class ="num" type="button" value="    )    " onclick="add(')')" />
-        <input class ="num" type="button" value="    C    " onclick="clearDisplay()" />
-        <input class ="op" type="button" value="    %    " onclick="add('%')" />
+        <input id="op" type="button" value="  +/-  " onclick="swap()" />
+        <input id="op" type="button" value="   (    " onclick="add('(')" />
+        <input id="op" type="button" value="    )   " onclick="add(')')" />
+        <input id="op" type="button" value="  AC  " onclick="clearDisplay()" />
+        <input id="op" type="button" value="   C   " onclick="del()" />
+        <input id="op" type="button" value="   %   " onclick="add('%')" />
         <br />
-        <input class ="num" type="button" value="    7    " onclick="add('7')" />
-        <input class ="num" type="button" value="    8    " onclick="add('8')" />
-        <input class ="num" type="button" value="    9    " onclick="add('9')" />
-        <input class ="op" type="button" value="    &#xF7;    " onclick="add('/')" />
+        <input id="op" type="button" value="   x&sup2   " onclick="pow(this.form.display)" />
+        <input id="op" type="button" value="   π   " onclick="Pi()" />
+        <input id="num" type="button" value="   7   " onclick="add('7')" />
+        <input id="num" type="button" value="   8   " onclick="add('8')" />
+        <input id="num" type="button" value="   9   " onclick="add('9')" />
+        <input id="op" type="button" value="   &#xF7;   " onclick="add('/')" />
         <br />
-        <input class ="num" type="button" value="    4    " onclick="add('4')" />
-        <input class ="num" type="button" value="    5    " onclick="add('5')" />
-        <input class ="num" type="button" value="    6    " onclick="add('6')" />
-        <input class ="op" type="button" value="    &#215;    " onclick="add('*')" />
+        <input id="op" type="button" value="  sin  " onclick="sin()" />
+        <input id="op" type="button" value="   e   " onclick="e()" />
+        <input id="num" type="button" value="   4   " onclick="add('4')" />
+        <input id="num" type="button" value="   5   " onclick="add('5')" />
+        <input id="num" type="button" value="   6   " onclick="add('6')" />
+        <input id="op" type="button" value="   &#215;   " onclick="add('*')" />
         <br />
-        <input class ="num" type="button" value="    1    " onclick="add('1')" />
-        <input class ="num" type="button" value="    2    " onclick="add('2')" />
-        <input class ="num" type="button" value="    3    " onclick="add('3')" />
-        <input class ="op" type="button" value="    -    " onclick="add('-')" />
+        <input id="op" type="button" value="  cos  " onclick="cos()" />
+        <input id="op" type="button" value="   &radic;    " onclick="sqrt2()" />
+        <input id="num" type="button" value="   1   " onclick="add('1')" />
+        <input id="num" type="button" value="   2   " onclick="add('2')" />
+        <input id="num" type="button" value="   3   " onclick="add('3')" />
+        <input id="op" type="button" value="   -   " onclick="add('-')" />
         <br />
-        <input class ="num" type="button" value="    0    " onclick="add('0')" />
-        <input class ="num" type="button" value="    .    " onclick="add('.')" />
-        <input class ="num" type="button" value="    =    " name="enter" onclick="compute()" />
-        <input class ="op" type="button" value="    +    " onclick="add('+')" />
+        <input id="op" type="button" value="  tan  " onclick="tan()" />
+        <input id="op" type="button" value="16진수" onclick="hex()" />
+        <input id="num" type="button" value="   0   " onclick="add('0')" />
+        <input id="num" type="button" value="   .   " onclick="add('.')" />
+        <input id ="num" type="button" value="   =   " name="enter" onclick="compute()" />
+        <input id="op" type="button" value="   +   " onclick="add('+')" />
+        <br />
+        
       </form>
       <h4>COMSI, HM06</h4>
     </div>
