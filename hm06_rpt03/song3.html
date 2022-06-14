@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hm06</title>
+    <style>
+		.multiEffect {
+			color: steelblue;
+			text-shadow: 2px 2px 2px black;
+		}
+	</style>
+    <script>
+        function load() {
+          var select = document.getElementById("site");
+          window.location =select.options[select.selectedIndex].value;
+        }
+        function change() {
+            var spanArray = document.getElementsByTagName("span");
+            for(var i=0; i<spanArray.length; i++) {
+                var span = spanArray[i];
+                span.style.color = "blue";
+                span.style.fontSize = "20px";
+            }
+        }
+
+      </script>
+      
+</head>
+<body>
+<h4>
+    <h3>
+      <h1 class="multiEffect" style="text-align: center;">Best Music 3</h1>
+    </h3>
+    
+    <div style="text-align:center">노래 선택 
+    <div style="text-align:center"><select onchange="if(this.value) location.href=(this.value);" name="movie">
+      <option value="song1.html" selected>아이유 - 가을아침 </option>
+      <option value="song2.html">경서 - 밤하늘에 별을</option>
+      <option value="song3.html">마크툽 - 오늘도 빛나는 너에게 </option>
+      <button onclick="load()">이동</button>
+    </select>
+
+
+    <h3>
+
+        <li>
+            <a href="https://www.youtube.com/watch?v=wQ0WQIj45jc" target="_blank">오늘도 빛나는 너에게</a>
+            <h4>
+            
+                <img src="media/maktup.jpg" width="200" height="200">
+            </h4>
+        <h4>
+         
+           
+            
+            <ul>
+                <li style="font-weight: bold;">아티스트 - 마크툽<br>
+                <li style="font-weight: bold;">발매 - 2019.06.22<br>
+                <li style="font-weight: bold;">장르 - K팝<br>
+                <li style="font-weight: bold;">작곡 - 마크툽<br>
+                <li style="font-weight: bold;">작사 - 마크툽<br>
+                <li style="font-weight: bold;">원곡 - 마크툽<br>
+                <li style="font-weight: bold;">편곡 - 이라온<br>
+            </ul>
+    </h4>
+    </h3>
+</h4>
+</body>
+</html>

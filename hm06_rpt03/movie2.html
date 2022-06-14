@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hm06</title>
+    <style>
+		.multiEffect {
+			color: steelblue;
+			text-shadow: 2px 2px 2px black;
+		}
+	</style>
+    <script>
+        function load() {
+          var select = document.getElementById("site");
+          window.location =select.options[select.selectedIndex].value;
+        }
+        function change() {
+            var spanArray = document.getElementsByTagName("span");
+            for(var i=0; i<spanArray.length; i++) {
+                var span = spanArray[i];
+                span.style.color = "blue";
+                span.style.fontSize = "20px";
+            }
+        }
+
+      </script>
+      
+</head>
+<body>
+<h4>
+    <h3>
+      <h1 class="multiEffect" style="text-align: center;">Best Movie 3</h1>
+    </h3>
+    
+    <div style="text-align:center">노래 선택 
+    <div style="text-align:center"><select onchange="if(this.value) location.href=(this.value);" name="movie">
+      <option value="movie1.html" selected>아이언맨 </option>
+      <option value="movie2.html">어밴져스</option>
+      <option value="movie3.html">스파이더맨 </option>
+      <button onclick="load()">이동</button>
+    </select>
+
+
+    <h3>
+
+        <li>
+            <a href="https://www.youtube.com/watch?v=yUvppnhqlBY" target="_blank">가을아침</a>
+            <h4>
+            
+                <img src="media/iu.jpg" width="200" height="200">
+            </h4>
+        <h4>
+         
+           
+            
+        
+    </h4>
+    </h3>
+</h4>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+<script>
+  
+</script>
+
+        <title>hm06 : 나는 누구인가?</title></head>
+		<style>
+
+			body.main{background: skyblue}
+
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+		body {
+		margin: 0;
+		padding: 0;
+		font-family: "Roboto", serif;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		overflow-x: hidden;  
+		}
+
+		h1 {
+		margin: 2em 0 1.5em 0;
+		}
+
+		nav1 {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		background:gray
+		}
+
+		ul, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		}
+				
+		#main-menu > li {
+		float: left;
+		position: relative;
+		}
+
+		#main-menu > li > a {
+		font-size: 0.85rem;
+		color: rgba(255,255,255,0.85);
+		text-align: center;
+		text-decoration: none;
+		letter-spacing: 0.05em;
+		display: block;
+		padding: 14px 36px;
+		border-right: 1px solid;
+		}
+
+		#main-menu > li:nth-child(1) > a {
+		border-left: 1px solid; 
+		}
+
+		#sub-menu {
+		position: absolute;
+		background: #9499a7;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.15s ease-in;
+		}
+
+		#sub-menu > li {
+		padding: 16px 28px;
+		border-bottom: 1px solid; 
+		}
+
+		#sub-menu > li >  a {
+		color: rgba(255,255,255,0.85);
+		text-decoration: none;
+		}
+
+		#main-menu > li:hover #sub-menu {
+		opacity: 1;
+		visibility: visible;
+		}
+
+		#sub-menu > li >  a:hover {
+		text-decoration: underline;
+		}
+
+		#hm06{
+			transform: translate(30px, -14px);
+        }
+</style>
+<script>
+	function change(obj,size,color){
+		obj.style.color = color;
+		obj.style.fontSize = size;
+	}
+</script>
+    <body class="main">	
+		<nav1 role="navigation">
+			<ul id="main-menu">
+			  <li><a href="hm06_info.html" target="bottom">나는 누구인가?</a></li>
+			  <li><a href="hm06_day.html" target="bottom">하루 일과</a>
+			  <li><a href="hm06_bestmovie3.html" target="bottom">My Best 3</a>
+				<ul id="sub-menu">
+				  <li><a href="hm06_bestmovie3.html" target="bottom" aria-label="subemnu">Bset Movie3</a></li>
+				  <li><a href="hm06_bestmusic3.html" target="bottom" aria-label="subemnu">Best Song3</a></li>
+				</ul>
+			  </li>
+			  <li><a href="hm06_card.html" target="bottom">X-MAS 카드</a>
+				<li><a href="hm06_form.html" target="bottom">영화 동호회 가입</a>
+			  <li><a href="https://github.com/redwoods/html5">HTML5 강의홈피</a></li>
+			</ul>
+		</nav1>
+         
+    <iframe src="hm06_home.html" name="bottom" width="1470" height="810" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=no vspace=0></iframe>
+
+	<footer class="footer">
+		<p id="hm06" class="blurText" style="font-size: 27px; text-align: left; font-style: italic; color: black;" onmouseover="change(this,'32px','slategrey')" onmouseout="change(this,'27px','black')">
+			HM06 김창연
+		</p>
+	</footer>
+
+</body>
+</html>
